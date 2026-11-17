@@ -1,0 +1,4 @@
+interface:
+  display_name: "宏基因组分析"
+  short_description: "物种、多样性与功能分析"
+  default_prompt: "请检查输入与元数据，完成物种组成、多样性、功能谱、物种-功能关联和结果报告。"
