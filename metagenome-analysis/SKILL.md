@@ -56,3 +56,16 @@ description: "Analyze metagenomic data from taxonomic composition and diversity 
 - 每个目标分析均有可追踪输出；对缺失步骤说明原因，不把未完成写成完成。
 - 图数、表格数值、正文结论一致；每张图均有实质性文字解读。
 - 检查报告格式能打开，PDF 页数/图像合理，HTML 资源完整，输出确实位于用户要求的目录。
+## 已安装服务器资源与复用规则
+
+共享服务器：`172.16.100.7`。运行前检查绝对路径；已有工具、索引和数据库直接复用，禁止重复安装、重新下载或覆盖。
+
+- fastp、Kraken2、Bracken、bowtie2：`/home/licun/miniconda3/envs/metagenome_env/bin/`
+- Kraken2/Bracken 数据库：`/home/liuhongbin/database/metagenome/kraken2_GTDB226`
+- MetaPhlAn：`/home/licun/miniconda3/envs/ksb_humann2/bin/metaphlan`
+- MetaPhlAn 数据库：`/home/licun/Data/PolyMicro20261113/Results/databases/metaphlan/extracted`，索引 `mpa_vJan26_CHOCOPhlAnSGB_202605`
+- MetaPhlAn 备用库：`/home/liuhongbin/database/metagenome/humann3/metaphlan_databases`
+- HUMAnN3：`/home/licun/miniconda3/envs/ksb_humann2/bin/humann*`；数据库 `/home/liuhongbin/database/metagenome/humann3/humann3`
+- R：`/home/licun/miniconda3/envs/r_ksb/bin/Rscript`
+
+默认项目根目录为 `/home/licun/Data/PolyMicro20261113`，结果、脚本和日志分别放入 `Results/`、`Results/scripts/`、`Results/logs/`。启动前检查 SSH、输入、metadata、工具版本、数据库索引、权限和已有状态表；成功样本跳过，失败步骤重跑。路径缺失或版本不兼容时先报告，未经用户同意不得下载或安装。
