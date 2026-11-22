@@ -56,6 +56,10 @@ description: "Analyze metagenomic data from taxonomic composition and diversity 
 - 每个目标分析均有可追踪输出；对缺失步骤说明原因，不把未完成写成完成。
 - 图数、表格数值、正文结论一致；每张图均有实质性文字解读。
 - 检查报告格式能打开，PDF 页数/图像合理，HTML 资源完整，输出确实位于用户要求的目录。
+## Figure 4 compositional microbiome analysis
+
+When a user requests a publication-style Figure 4 based on MetaPhlAn species relative abundance, read and follow [references/figure4_compositional_workflow.md](references/figure4_compositional_workflow.md). This module covers CLR preprocessing, alpha diversity, CLR-PCA, paired CLR effects, random-forest feature heatmaps, representative species plots, paired tests, and BH-FDR correction. Use real metadata for donor, treatment, and replicate labels; never infer labels from sample-number ranges. Record separate selection rules for C, D, and E because their rankings answer different questions.
+
 ## 已安装服务器资源与复用规则
 
 共享服务器：`172.16.100.7`。运行前检查绝对路径；已有工具、索引和数据库直接复用，禁止重复安装、重新下载或覆盖。
